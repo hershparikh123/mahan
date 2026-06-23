@@ -7,10 +7,11 @@ import { PHONE, PHONE_HREF } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#standard", label: "How we work" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/#standard", label: "How we work" },
+  { href: "/#reviews", label: "Reviews" },
+  { href: "/estimate", label: "Estimate" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -34,7 +35,7 @@ export function Navbar() {
             : "border-ink/5 bg-cream/60 backdrop-blur-sm"
         )}
       >
-        <a href="#top" className="group flex items-center gap-2.5">
+        <a href="/" className="group flex items-center gap-2.5">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-petrol text-cream transition-transform group-hover:-rotate-6">
             <Droplets className="h-5 w-5" />
           </span>

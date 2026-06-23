@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Phone,
   Droplets,
@@ -255,6 +256,31 @@ export default function Page() {
               </article>
             </RevealItem>
           </RevealGroup>
+        </div>
+      </section>
+
+      {/* ===================== ESTIMATE CTA ===================== */}
+      <section className="bg-cream pb-16 md:pb-20">
+        <div className="container">
+          <Reveal direction="up">
+            <Link
+              href="/estimate"
+              className="group flex flex-col items-start justify-between gap-5 rounded-3xl border border-petrol/20 bg-petrol/5 p-7 transition-colors hover:bg-petrol/10 sm:flex-row sm:items-center md:p-9"
+            >
+              <div>
+                <h3 className="font-display text-2xl font-600 text-ink md:text-3xl">
+                  Not sure what it&apos;ll cost?
+                </h3>
+                <p className="mt-1.5 max-w-md text-ink/65">
+                  Get a ballpark estimate online in about a minute — no phone call,
+                  no obligation.
+                </p>
+              </div>
+              <span className={`inline-flex shrink-0 items-center gap-2 rounded-full bg-petrol px-6 py-3.5 text-sm font-semibold text-cream transition-transform group-hover:translate-x-0.5 ${upper}`}>
+                Get an estimate <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
