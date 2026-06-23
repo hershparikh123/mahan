@@ -3,7 +3,6 @@ import {
   Droplets,
   Snowflake,
   Flame,
-  ShieldCheck,
   MapPin,
   Clock,
   Star,
@@ -22,23 +21,23 @@ import { Button } from "@/components/ui/button";
 import { PHONE, PHONE_HREF, EMAIL, SERVICE_TOWNS, HOURS } from "@/lib/site";
 
 const stats = [
-  { value: "30+", label: "Years serving Morris County" },
-  { value: "24/7", label: "Emergency response" },
-  { value: "5★", label: "Top-rated on Google" },
-  { value: "100%", label: "Local & family-run" },
+  { value: "Local", label: "Family-run, in Montville" },
+  { value: "Same-day", label: "for urgent calls when we can" },
+  { value: "Fair", label: "Upfront, honest pricing" },
+  { value: "5★", label: "Reviewed on Google" },
 ];
 
 const standards = [
   {
-    eyebrow: "Integrity",
-    title: "No Stealth Fees",
-    body: "Transparent quotes mean the price we say is the price you pay — every time. No hidden diagnostic fees, no weekend surcharges.",
+    eyebrow: "Pricing",
+    title: "Honest pricing",
+    body: "You'll know the cost before we start. No hidden fees, and we won't sell you a new system when a repair will do.",
     accent: "ember",
   },
   {
-    eyebrow: "Reliability",
-    title: "Rapid Response",
-    body: "Locally dispatched with neighborhood routing, so we reach your emergency fast — usually same-day, often within the hour.",
+    eyebrow: "Availability",
+    title: "We pick up the phone",
+    body: "Call and you'll usually reach a real person. For anything urgent, we'll get to you as soon as we can — often the same day.",
     accent: "copper",
   },
 ];
@@ -90,34 +89,33 @@ export default function Page() {
             <Reveal>
               <span className={`inline-flex items-center gap-2 rounded-full border border-ink/15 bg-cream/70 px-4 py-1.5 text-[11px] font-bold ${upper} text-ink/70 backdrop-blur`}>
                 <span className="h-1.5 w-1.5 rounded-full bg-petrol" />
-                Since 1994 · Industrial Precision
+                Family-run · Montville, NJ
               </span>
             </Reveal>
 
             <Reveal delay={0.08}>
               <h1 className="mt-6 font-display text-5xl font-600 leading-[1.02] tracking-tight text-ink text-balance sm:text-6xl xl:text-7xl">
-                Engineering{" "}
-                <span className="italic text-petrol">Comfort</span> With Total
-                Precision.
+                Plumbing and heating,{" "}
+                <span className="italic text-petrol">without the runaround</span>.
               </h1>
             </Reveal>
 
             <Reveal delay={0.16}>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/70">
-                Plumbing, heating &amp; air conditioning for Montville homeowners
-                who want it done right the first time — fair prices, fast on
-                emergencies, and unafraid of the jobs nobody else will touch.
+                We&apos;re a small, family-run plumbing and HVAC team in
+                Montville. We answer the phone, show up when we say we will, and
+                tell you straight what something costs.
               </p>
             </Reveal>
 
             <Reveal delay={0.24}>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <RequestServiceButton variant="ink" size="lg" className={`${upper} text-sm`}>
-                  Book Service Now
+                  Request a visit
                 </RequestServiceButton>
                 <a href="#services">
                   <Button variant="outline" size="lg" className={`w-full ${upper} text-sm sm:w-auto`}>
-                    View Services <ArrowRight className="h-4 w-4" />
+                    What we do <ArrowRight className="h-4 w-4" />
                   </Button>
                 </a>
               </div>
@@ -163,13 +161,13 @@ export default function Page() {
           <Reveal>
             <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
               <div className="max-w-xl">
-                <SectionLabel>Core Masteries</SectionLabel>
+                <SectionLabel>What we do</SectionLabel>
                 <h2 className="mt-4 font-display text-4xl font-600 leading-tight text-balance md:text-5xl">
-                  One crew for everything water, heat &amp; air.
+                  Water, heat, and air — one team that knows your house.
                 </h2>
                 <p className="mt-4 text-ink/65">
-                  From intricate piping to full HVAC overhauls, our technicians
-                  handle every project with proper tools and white-glove care.
+                  Whether it&apos;s a small leak or a whole heating system, it&apos;s
+                  the same people each time. No call centers, no handing you off.
                 </p>
               </div>
               <RequestServiceButton variant="primary" size="lg" className={`text-sm ${upper}`}>
@@ -184,14 +182,14 @@ export default function Page() {
             <RevealItem direction="left" className="lg:row-span-2">
               <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white/60 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-copper/40 hover:shadow-[0_30px_60px_-30px_rgba(22,65,90,0.4)]">
                 <BentoIcon icon={Droplets} />
-                <h3 className="mt-5 font-display text-2xl font-600">Master Plumbing</h3>
+                <h3 className="mt-5 font-display text-2xl font-600">Plumbing</h3>
                 <p className="mt-2.5 max-w-xs text-sm leading-relaxed text-ink/65">
-                  Full-spectrum installation, emergency leak repair, and advanced
-                  drain &amp; sewer diagnostics — including collapsed sewer lines
-                  other shops walk away from.
+                  Leaks, water heaters, drains and sewer lines — the everyday
+                  stuff and the bigger jobs too, like a sewer line that&apos;s given
+                  out underground.
                 </p>
                 <ul className="mt-5 space-y-1.5">
-                  {["Sewer & drain repair", "Water heaters", "Leak detection", "Repipes & fixtures"].map((p) => (
+                  {["Drains & sewer lines", "Water heaters", "Leak repair", "Fixtures & repipes"].map((p) => (
                     <Bullet key={p}>{p}</Bullet>
                   ))}
                 </ul>
@@ -210,8 +208,8 @@ export default function Page() {
                   <BentoIcon icon={Snowflake} />
                   <h3 className="mt-5 font-display text-2xl font-600">Air Conditioning</h3>
                   <p className="mt-2.5 max-w-sm text-sm leading-relaxed text-ink/65">
-                    Honest sizing, clean central &amp; ductless installs, and smart
-                    thermostat integration that keeps up with a Jersey August.
+                    Repairs, new central or ductless systems, and seasonal
+                    tune-ups to keep the house comfortable through the summer.
                   </p>
                 </div>
                 <div className="hidden h-32 w-56 shrink-0 sm:block">
@@ -224,32 +222,35 @@ export default function Page() {
             <RevealItem direction="up">
               <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white/60 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-copper/40 hover:shadow-[0_30px_60px_-30px_rgba(22,65,90,0.4)]">
                 <BentoIcon icon={Flame} />
-                <h3 className="mt-5 font-display text-2xl font-600">Heating Systems</h3>
+                <h3 className="mt-5 font-display text-2xl font-600">Heating</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-ink/65">
-                  Boilers and furnaces diagnosed and fixed — not just swapped.
-                  When the heat quits on the coldest night, we show up.
+                  Boilers, furnaces, and the repairs that keep them running. When
+                  the heat quits on a cold night, give us a call.
                 </p>
               </article>
             </RevealItem>
 
-            {/* Priority Care — dark CTA */}
+            {/* Emergencies — dark card */}
             <RevealItem direction="up">
               <article className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl bg-petrol p-7 text-cream">
                 <Wires variant="band" tone="cream" />
                 <div className="relative">
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-ember/20 text-ember">
-                    <ShieldCheck className="h-6 w-6" />
+                    <Phone className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-2xl font-600">Priority Care</h3>
+                  <h3 className="mt-5 font-display text-2xl font-600">Emergencies</h3>
                   <p className="mt-2.5 text-sm leading-relaxed text-cream/70">
-                    Join our annual protection plan: 15% off all repairs, seasonal
-                    tune-ups, and front-of-line emergency dispatch.
+                    Burst pipe, no heat, water where it shouldn&apos;t be? Give us a
+                    call and we&apos;ll do our best to get to you quickly —
+                    evenings and weekends included.
                   </p>
                 </div>
                 <div className="relative mt-6">
-                  <RequestServiceButton variant="primary" className={`text-sm ${upper}`}>
-                    Join the Plan
-                  </RequestServiceButton>
+                  <a href={PHONE_HREF}>
+                    <Button variant="primary" className={`text-sm ${upper}`}>
+                      <Phone className="h-4 w-4" /> {PHONE}
+                    </Button>
+                  </a>
                 </div>
               </article>
             </RevealItem>
@@ -263,17 +264,17 @@ export default function Page() {
         <div className="container relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <Reveal direction="left" distance={44}>
             <div className="lg:sticky lg:top-28">
-              <SectionLabel>The Mahan Standard</SectionLabel>
+              <SectionLabel>How we work</SectionLabel>
               <h2 className="mt-4 font-display text-4xl font-600 leading-tight text-balance md:text-5xl">
-                We don&apos;t just fix pipes. We engineer peace of mind.
+                No surprises, no pressure.
               </h2>
               <p className="mt-5 max-w-md text-ink/65">
-                Our protocols come from commercial-grade standards, brought home
-                to your basement. It&apos;s the part you can&apos;t fake: showing
-                up, being straight with you, and standing behind the work.
+                It&apos;s pretty simple: we show up when we say we will, explain
+                what&apos;s going on in plain terms, and clean up before we leave.
+                If it doesn&apos;t need fixing, we&apos;ll tell you that too.
               </p>
               <ul className="mt-7 space-y-2.5">
-                {["Fixed-price guarantee", "Certified journeymen", "Post-service audits"].map((p) => (
+                {["Fair, upfront pricing", "Licensed & experienced", "We clean up after ourselves"].map((p) => (
                   <li key={p} className={`flex items-center gap-2.5 text-sm font-semibold ${upper} text-ink/75`}>
                     <Check className="h-4 w-4 text-petrol" /> {p}
                   </li>
@@ -318,13 +319,12 @@ export default function Page() {
                 <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <h3 className="font-display text-3xl font-600 leading-tight">
-                      Locally Owned.
-                      <br />
-                      Community Focused.
+                      We live here too.
                     </h3>
                     <p className="mt-3 max-w-sm text-sm text-cream/65">
-                      We live and work in Montville. Your neighbors are our
-                      customers — and our reputation walks the same streets you do.
+                      We&apos;re based right in Montville, and a lot of our
+                      customers are neighbors. Word gets around in a town like
+                      this — so we&apos;d rather just do the job right.
                     </p>
                   </div>
                   <div className="flex shrink-0 gap-3">
@@ -349,14 +349,14 @@ export default function Page() {
         <div className="container relative">
           <Reveal>
             <div className="flex flex-col items-center text-center">
-              <SectionLabel>Client Verdicts</SectionLabel>
+              <SectionLabel>From our customers</SectionLabel>
               <div className="mt-4 flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-ember text-ember" />
                 ))}
               </div>
               <h2 className="mt-4 max-w-2xl font-display text-4xl font-600 leading-tight text-balance md:text-5xl">
-                The reviews read like thank-you notes.
+                A few words from neighbors.
               </h2>
             </div>
           </Reveal>
@@ -394,13 +394,13 @@ export default function Page() {
                 {/* left: details */}
                 <div className="relative overflow-hidden p-8 md:p-12">
                   <div className="relative">
-                    <SectionLabel>Ready to upgrade your comfort?</SectionLabel>
+                    <SectionLabel>Get in touch</SectionLabel>
                     <h2 className="mt-4 font-display text-3xl font-600 leading-tight text-balance md:text-4xl">
                       Something leaking, clanking, or just not working?
                     </h2>
                     <p className="mt-4 max-w-md text-ink/65">
-                      Serving Montville and the greater Morris County region. Call
-                      us or send a request — we&apos;re ready when you are.
+                      We cover Montville and the surrounding Morris County towns.
+                      Give us a call, or send a note and we&apos;ll get back to you.
                     </p>
 
                     <div className="mt-8 space-y-4">
@@ -419,11 +419,11 @@ export default function Page() {
 
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                       <RequestServiceButton variant="primary" size="lg" className={`text-sm ${upper}`}>
-                        Schedule a Visit
+                        Send a request
                       </RequestServiceButton>
                       <a href={PHONE_HREF}>
                         <Button variant="ink" size="lg" className={`w-full text-sm ${upper} sm:w-auto`}>
-                          <Phone className="h-4 w-4" /> Call Now
+                          <Phone className="h-4 w-4" /> Call us
                         </Button>
                       </a>
                     </div>

@@ -18,7 +18,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Mahan Plumbing, Heating & AC — Montville, NJ",
   description:
-    "Family-run plumbing, heating, and air conditioning service in Montville, NJ. Fair pricing, fast emergency response, and real expertise on the jobs others won't touch.",
+    "Family-run plumbing, heating, and air conditioning in Montville, NJ. Honest pricing, the same people each time, and help when something goes wrong.",
   keywords: [
     "plumbing Montville NJ",
     "HVAC Morris County",
