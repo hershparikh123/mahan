@@ -23,8 +23,8 @@ const ROUTES: Record<Variant, string[]> = {
   left: ["M1240 110 V540 a34 34 0 0 1 -34 34 H520"],
   // services header up top → pipe lives down in the card region, right + bottom
   right: ["M1240 270 V560 a34 34 0 0 1 -34 34 H-40"],
-  // dark band, text left / icons right → bottom + right edges only
-  split: ["M1240 650 H300 a30 30 0 0 1 -30 -30 V320"],
+  // dark band, text left / icons right → bottom edge only (no vertical through text)
+  split: ["M-40 655 H1240"],
   // small dark cards → top-right corner bracket (clear of left-aligned text)
   band: ["M1240 -30 V90 a30 30 0 0 0 -30 30 H720"],
 };

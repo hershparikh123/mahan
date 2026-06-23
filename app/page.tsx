@@ -24,7 +24,7 @@ import { PHONE, PHONE_HREF, EMAIL, SERVICE_TOWNS, HOURS } from "@/lib/site";
 const stats = [
   { value: "30+", label: "Years serving Morris County" },
   { value: "24/7", label: "Emergency response" },
-  { value: "4.9★", label: "Across 600+ reviews" },
+  { value: "5★", label: "Top-rated on Google" },
   { value: "100%", label: "Local & family-run" },
 ];
 
@@ -46,31 +46,31 @@ const standards = [
 const reviews = [
   {
     quote:
-      "Mahan arrived within 45 minutes for a burst pipe at 3 AM. The repair was professional and they even helped clean up the water damage. Highly recommend.",
-    name: "James D.",
-    role: "Montville, NJ",
-    initials: "JD",
+      "My AC went out right as a crazy heat wave started — and Bob and his team came to the rescue. Within two hours he had two techs at my house diagnosing and repairing. I cannot say enough great things about Mahan Plumbing!",
+    name: "Natavia Hayes",
+    role: "Emergency AC repair",
+    initials: "NH",
   },
   {
     quote:
-      "Our basement sewer line collapsed and two other companies shrugged. Mahan diagnosed it, gave us a fair number, and replaced it in a day. Lifesavers.",
-    name: "Diane R.",
-    role: "Towaco, NJ",
-    initials: "DR",
+      "Bob rescued me on New Year's Eve when it was 9 degrees outside and my furnace died. Very nice guys, know what they're doing, fair price, and reliable in an emergency. Thanks!",
+    name: "Sarah Dougherty",
+    role: "Furnace emergency",
+    initials: "SD",
   },
   {
     quote:
-      "What I appreciate most is the honesty. They told me my AC had a few good years left instead of pushing a $9k replacement. Earned my business for life.",
-    name: "Anthony C.",
-    role: "Mountain Lakes, NJ",
-    initials: "AC",
+      "We had no heat in our unit. They came out ASAP and resolved the issue in under 20 minutes. With a chilly week coming up, these guys went above and beyond. A+++ service!",
+    name: "Steve Perfetto",
+    role: "No-heat call",
+    initials: "SP",
   },
   {
     quote:
-      "Third generation in our house using Mahan. Same care, same fair pricing, always cleans up after the work. They feel like family at this point.",
-    name: "Lorraine M.",
-    role: "Pine Brook, NJ",
-    initials: "LM",
+      "I had to replace a steam heat boiler and they were competitively priced, quick to respond, and quick to install. I'll continue to use them for all my HVAC needs.",
+    name: "Deb Hakooz",
+    role: "Boiler replacement",
+    initials: "DH",
   },
 ];
 
