@@ -21,9 +21,9 @@ import { Button } from "@/components/ui/button";
 import { PHONE, PHONE_HREF, EMAIL, SERVICE_TOWNS, HOURS } from "@/lib/site";
 
 const stats = [
-  { value: "Local", label: "Family-run, in Montville" },
-  { value: "Same-day", label: "for urgent calls when we can" },
-  { value: "Fair", label: "Upfront, honest pricing" },
+  { value: "30+", label: "Years in the trade" },
+  { value: "24/7", label: "When it's an emergency" },
+  { value: "100%", label: "Family-run & local" },
   { value: "5★", label: "Reviewed on Google" },
 ];
 
@@ -155,29 +155,29 @@ export default function Page() {
       </section>
 
       {/* ===================== CORE MASTERIES ===================== */}
-      <section id="services" className="relative overflow-hidden bg-cream py-24 md:py-32">
+      <section id="services" className="relative overflow-hidden bg-cream py-16 md:py-20">
         <Wires variant="right" />
         <div className="container relative">
           <Reveal>
-            <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-              <div className="max-w-xl">
+            <div className="flex flex-col items-start gap-2 md:flex-row md:items-end md:justify-between md:gap-8">
+              <div className="max-w-2xl">
                 <SectionLabel>What we do</SectionLabel>
-                <h2 className="mt-4 font-display text-4xl font-600 leading-tight text-balance md:text-5xl">
+                <h2 className="mt-3 font-display text-4xl font-600 leading-tight text-balance md:text-5xl">
                   Water, heat, and air — one team that knows your house.
                 </h2>
-                <p className="mt-4 text-ink/65">
+                <p className="mt-4 max-w-xl text-ink/65">
                   Whether it&apos;s a small leak or a whole heating system, it&apos;s
                   the same people each time. No call centers, no handing you off.
                 </p>
               </div>
-              <RequestServiceButton variant="primary" size="lg" className={`text-sm ${upper}`}>
+              <RequestServiceButton variant="primary" size="lg" className={`mt-5 shrink-0 text-sm md:mt-0 ${upper}`}>
                 Request Service <ArrowRight className="h-4 w-4" />
               </RequestServiceButton>
             </div>
           </Reveal>
 
           {/* bento grid */}
-          <RevealGroup className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2" stagger={0.12}>
+          <RevealGroup className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2" stagger={0.12}>
             {/* Master Plumbing — tall left */}
             <RevealItem direction="left" className="lg:row-span-2">
               <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white/60 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-copper/40 hover:shadow-[0_30px_60px_-30px_rgba(22,65,90,0.4)]">
