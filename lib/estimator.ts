@@ -8,16 +8,24 @@
 
 export type Severity = "minor" | "moderate" | "major";
 
+/**
+ * `pos` places the severity along each job's price range (0 = bottom, 1 = top).
+ * We then show a tight band (±SPREAD) around that point, so the result is a
+ * narrow, believable range rather than the job's entire low-to-high span.
+ */
 export const SEVERITY: {
   id: Severity;
   label: string;
   desc: string;
-  mult: number;
+  pos: number;
 }[] = [
-  { id: "minor", label: "Minor", desc: "Small and isolated — one fixture or a quick fix.", mult: 0.7 },
-  { id: "moderate", label: "Moderate", desc: "A clear problem affecting one area of the home.", mult: 1 },
-  { id: "major", label: "Major", desc: "Widespread, or a full system that has failed.", mult: 1.7 },
+  { id: "minor", label: "Minor", desc: "Small and isolated — one fixture or a quick fix.", pos: 0.2 },
+  { id: "moderate", label: "Moderate", desc: "A clear problem affecting one area of the home.", pos: 0.5 },
+  { id: "major", label: "Major", desc: "Widespread, or a full system that has failed.", pos: 0.82 },
 ];
+
+/** Half-width of the shown band, as a fraction of the midpoint (±10%). */
+export const SPREAD = 0.1;
 
 /** Flat add-on for nights / weekends / true emergencies. */
 export const EMERGENCY_FEE = 150;
@@ -84,7 +92,7 @@ export type EstimateResult = {
   fee: number;
 };
 
-const roundTo = (n: number, step = 25) => Math.round(n / step) * step;
+const roundTo = (n: number, step = 10) => Math.round(n / step) * step;
 
 export function findJob(serviceId: ServiceId | null, jobId: string | null): Job | undefined {
   if (!serviceId || !jobId) return undefined;
@@ -95,12 +103,14 @@ export function calcEstimate(input: EstimateInput): EstimateResult | null {
   const job = findJob(input.serviceId, input.jobId);
   if (!job || !input.severity) return null;
 
-  const mult = SEVERITY.find((s) => s.id === input.severity)!.mult;
+  const { pos } = SEVERITY.find((s) => s.id === input.severity)!;
+  const [min, max] = job.base;
+  const center = min + pos * (max - min); // severity midpoint
   const fee = input.afterHours ? EMERGENCY_FEE : 0;
 
   return {
-    low: roundTo(job.base[0] * mult) + fee,
-    high: roundTo(job.base[1] * mult) + fee,
+    low: roundTo(center * (1 - SPREAD)) + fee,
+    high: roundTo(center * (1 + SPREAD)) + fee,
     fee,
   };
 }
